@@ -3,10 +3,7 @@ package com.intuit.worldtimeapi.controller;
 
 import com.intuit.worldtimeapi.model.WorldTimeResponse;
 import com.intuit.worldtimeapi.service.WorldTimeService;
-import org.hamcrest.Matchers;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
-import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,12 +11,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @AutoConfigureMockMvc
 @SpringBootTest
@@ -101,7 +98,7 @@ public class WorldTimeControllerTest {
 
     private String[] createResponseObjectForAllTimezone() {
 
-        final String[] timeZones = {"Africa/Abidjan",
+        final String[] allTimezones = {"Africa/Abidjan",
                 "Africa/Accra",
                 "Africa/Algiers",
                 "Africa/Bissau",
@@ -120,12 +117,12 @@ public class WorldTimeControllerTest {
                 "Africa/Sao_Tome",
                 "Africa/Tripoli"};
 
-        return timeZones;
+        return allTimezones;
     }
 
     private String[] createResponseObjectForGivenTimezone() {
 
-        final String[] timeZones = {"America/Atikokan",
+        final String[] timezones = {"America/Atikokan",
                 "America/Bahia",
                 "America/Bahia_Banderas",
                 "America/Barbados",
@@ -140,7 +137,7 @@ public class WorldTimeControllerTest {
                 "America/Cancun",
                 "America/Caracas"};
 
-        return timeZones;
+        return timezones;
     }
 
 }
