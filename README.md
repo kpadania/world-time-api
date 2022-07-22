@@ -102,6 +102,5 @@ Content: {
     "path": "/api/timezone/america/montreal"
 }
 
-Sample Calls: curl http://localhost:8082/api/timezone/America/Toronto(success) 
-curl http://localhost:8082/api/timezone/America/Montreal(failure)
+Sample Calls: curl http://localhost:8082/api/timezone/America/Toronto(success) curl http://localhost:8082/api/timezone/America/Montreal(failure)
  
